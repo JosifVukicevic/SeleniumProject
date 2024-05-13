@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+}
+
+.change_system {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 600px;
+    padding: 5px;
+    margin-right: 20%;
+}
+
+.dugme {
+    width: 130px;
+    font-weight: bold;
+    border: 1px solid;
+    border-radius: 5px;
+    height: 30px;
+    background-color: #d58950;
+}
+
+.dugme:hover {
+    cursor: pointer;
+    background-color: #c97a3e;
+}
+
+.change_system input {
+    border: 1px solid;
+    border-radius: 5px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.change_system label {
+    font-size: large;
+    margin-bottom: 10px;
+}
+
+label > span {
+    color: gray;
+    font-size: smaller;
+}
+
+.main_div {
+    display: flex;
+    flex-direction: row;
+}
+
+.logo {
+    margin-right: auto;
+}
+
+.tenders_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.tenders {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: rgba(180, 180, 180, 0.22);
+    border-radius: 10px;
+}
+
+.img-for-tender {
+    width: 30%;
+    margin-right: 30px;
+}
+
+.tender {
+    margin-bottom: 15px;
+}
+
+#today_date {
+    color: #c97a3e;
+}

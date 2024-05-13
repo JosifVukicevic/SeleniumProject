@@ -1,0 +1,12 @@
+@media only screen and (max-width: 600px) {
+    .logo {
+        display: none;
+    }
+    .change_system {
+        margin: auto;
+    }
+    .tenders {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}

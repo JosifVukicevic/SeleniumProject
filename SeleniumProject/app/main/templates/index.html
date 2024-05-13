@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="J.V.">
+
+    <title>Tenderi</title>
+
+    <!-- favicon -->
+    <link rel="icon" href="{% static 'icons/favicon.ico'%}" type="image/gif"/>
+    <!-- linkovi bootsrap-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+</head>
+
+<body>
+
+<div class="main_div">
+    <img src="{% static 'images/logo.png' %}" class="logo">
+    <div class="change_system">
+        <h1>Podešavanja za sistem</h1>
+        <form method="post" action="{% url 'update_keywords' %}">
+            {% csrf_token %}
+            <label>Promijenite <b>ključne riječi</b>: <br><span>Moraju biti unešene u formatu ('rijec', 'rijec2', 'rijec3')</span></label>
+            <input type="text" value="'rijec1', 'rijec2'" placeholder="Ovdje unesite riječi..." id="id_keywords" name="keywords">
+            <button class="dugme" type="submit">Završeno</button>
+        </form>
+    </div>
+</div>
+<hr>
+
+
+<div class="tenders_div">
+    <h1>Svi tenderi za dan - <span id="today_date">10.5.2024</span></h1>
+    {% for tender in tenders %}
+    <div class="tenders">
+        <img src="{% static 'images/logo.png' %}" class="img-for-tender">
+        <div class="tender">
+            <p>Opis tendera: <span><b>{{ tender.opis }}</b></span></p>
+            <p>Status: <span class="status"><b>{{ tender.status }}</b></span></p>
+            <p>Datum objave: <span class="datum_objave"><b>{{ tender.datum_objave }}</b></span></p>
+            <p>Šifra tendera: <span id="sifra"><b>{{ tender.sifra }}</b></span></p>
+            <button class="dugme" onclick="pogledajTender('{{ tender.sifra }}')">Pogledaj tender</button>
+        </div>
+    </div><br>
+    {% endfor %}
+</div>
+<br>
+
+
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>
